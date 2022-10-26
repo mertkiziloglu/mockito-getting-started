@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="private-pension-provider" />
+        <module name="private-pension-provider (4)" />
+        <module name="private-pension-provider (1)" />
+        <module name="private-pension-provider (3)" />
+        <module name="private-pension-provider (2)" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="private-pension-provider" target="10" />
+      <module name="private-pension-provider (1)" target="10" />
+      <module name="private-pension-provider (2)" target="10" />
+      <module name="private-pension-provider (3)" target="10" />
+      <module name="private-pension-provider (4)" target="10" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

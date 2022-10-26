@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/mockito-getting-started.iml" filepath="$PROJECT_DIR$/.idea/mockito-getting-started.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02/demos/private-pension-provider.iml" filepath="$PROJECT_DIR$/02/demos/private-pension-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/03/demos/private-pension-provider (1).iml" filepath="$PROJECT_DIR$/03/demos/private-pension-provider (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/04/demos/private-pension-provider (2).iml" filepath="$PROJECT_DIR$/04/demos/private-pension-provider (2).iml" />
+      <module fileurl="file://$PROJECT_DIR$/05/demos/private-pension-provider (3).iml" filepath="$PROJECT_DIR$/05/demos/private-pension-provider (3).iml" />
+      <module fileurl="file://$PROJECT_DIR$/06/demos/private-pension-provider (4).iml" filepath="$PROJECT_DIR$/06/demos/private-pension-provider (4).iml" />
+    </modules>
+  </component>
+</project>
