@@ -28,11 +28,12 @@ class AccountOpeningServiceTest {
 
     @BeforeEach
     void setUp() {
-        underTest = new AccountOpeningService(backgroundCheckService, referenceIdsManager, accountRepository, eventPublisher);
+        underTest = new AccountOpeningService(backgroundCheckService, referenceIdsManager, accountRepository, eventPublisher);// mock islemi yapildi
     }
 
     @Test
-    public void shouldOpenAccount() throws IOException {
+    public void shouldOpenAccount() throws IOException {// bu testi calistirdigimizda backgroundCheckService.confirm() metodu calisir ve null donerse AccountOpeningStatus.DECLINED doner
+        when(backgroundCheckService.confirm(anyString(), anyString(), anyString(), any())).thenReturn(null);
         when(backgroundCheckService.confirm(FIRST_NAME, LAST_NAME, TAX_ID, DOB))
                 .thenReturn(new BackgroundCheckResults("something_not_unacceptable", 100));
         when(referenceIdsManager.obtainId(eq(FIRST_NAME), anyString(), eq(LAST_NAME), eq(TAX_ID), eq(DOB)))
