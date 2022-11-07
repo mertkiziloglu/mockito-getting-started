@@ -34,8 +34,12 @@ class AccountOpeningServiceTest {
     @Test
     public void shouldOpenAccount() throws IOException {// bu testi calistirdigimizda backgroundCheckService.confirm() metodu calisir ve null donerse AccountOpeningStatus.DECLINED doner
         when(backgroundCheckService.confirm(anyString(), anyString(), anyString(), any())).thenReturn(null);
+
+
         when(backgroundCheckService.confirm(FIRST_NAME, LAST_NAME, TAX_ID, DOB))
                 .thenReturn(new BackgroundCheckResults("something_not_unacceptable", 100));
+
+        //then return bizi bunla dondur demek
         when(referenceIdsManager.obtainId(eq(FIRST_NAME), anyString(), eq(LAST_NAME), eq(TAX_ID), eq(DOB)))
                 .thenReturn("some_id");
         final AccountOpeningStatus accountOpeningStatus = underTest.openAccount(FIRST_NAME, LAST_NAME, TAX_ID, DOB);
