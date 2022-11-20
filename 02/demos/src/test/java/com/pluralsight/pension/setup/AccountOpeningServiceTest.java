@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -28,6 +29,7 @@ class AccountOpeningServiceTest {
     public void shouldOpenAccount() throws IOException {
         final AccountOpeningStatus accountOpeningStatus = underTest.openAccount("John", "Smith", "123XYZ9", LocalDate.of(1990, 1, 1));
         assertEquals(AccountOpeningStatus.OPENED, accountOpeningStatus);
+        //assertTrue(AccountOpeningStatus.OPENED.isOpened()); // This is the same as the above line
 
     }
 }
