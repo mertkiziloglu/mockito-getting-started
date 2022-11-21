@@ -75,7 +75,7 @@ class AccountOpeningServiceTest {
                 .thenReturn(new BackgroundCheckResults("something_not_unacceptable", 100));
         when(referenceIdsManager.obtainId(eq(FIRST_NAME), anyString(), eq(LAST_NAME), eq(TAX_ID), eq(DOB)))
                 .thenThrow(new RuntimeException());
-        assertThrows(RuntimeException.class, () -> underTest.openAccount(FIRST_NAME, LAST_NAME, TAX_ID, DOB));
+        assertThrows(RuntimeException.class, () -> underTest.openAccount(FIRST_NAME, LAST_NAME, TAX_ID, DOB)); //lambda expression
     }
 
     @Test
