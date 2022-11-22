@@ -128,7 +128,7 @@ class AccountOpeningServiceTest {
     }
 
     @Test
-    public void shouldThrowIfEventPublisherThrows() throws IOException {
+    public void shouldThrowIfEventPublisherThrows() throws IOException {//again try to use the same background check results
         final BackgroundCheckResults backgroundCheckResults = new BackgroundCheckResults(
                 "something_not_unacceptable",
                 100);

@@ -26,7 +26,7 @@ class ExternalInvestmentManagementServiceTest {
     @Test
     public void shouldBeAbleToBuyPensionFundInvestmentIfEnoughCashInAccount() throws IOException {
         doReturn(true).when(underTest).executeInvestmentTransaction(
-                anyString(), any(BigDecimal.class), anyString());
+                anyString(), any(BigDecimal.class), anyString()); //doReturn(true) is the default behavior
         Account testAccount = new Account();
         testAccount.setInvestments(new HashSet<>());
         final BigDecimal startingAccountBalance = new BigDecimal(1000000);
