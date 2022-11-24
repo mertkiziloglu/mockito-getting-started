@@ -47,7 +47,7 @@ class AccountClosingServiceTest {
         Clock clock = Clock.fixed(fixedTime, ZoneId.systemDefault());
         AccountClosingService underTest = new AccountClosingService(backgroundCheckService, clock);
 
-        Account account = new Account();
+        Account account = new Account(); // account setleme işlemleri
         account.setFistName(FIRST_NAME);
         account.setLastName(LAST_NAME);
         account.setTaxId(TAX_ID);
@@ -55,7 +55,7 @@ class AccountClosingServiceTest {
         account.setDob(dob);
 
         BDDMockito.given(backgroundCheckService.confirm(FIRST_NAME, LAST_NAME, TAX_ID, dob))
-                .willReturn(new BackgroundCheckResults("OK", 1));
+                .willReturn(new BackgroundCheckResults("OK", 1)); // willReturn
 
         final AccountClosingResponse accountClosingResponse = underTest.closeAccount(account);
         assertEquals(AccountClosingStatus.CLOSING_OK, accountClosingResponse.getStatus());
