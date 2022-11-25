@@ -24,7 +24,14 @@ public class AccountOpeningService {
         this.eventPublisher = eventPublisher;
     }
 
-
+     //open account method
+    // ilk background check service confirm methodunu cagiriyor
+    // sonra null kontrolu yapip null degilse risk profile kontrolu yapip
+    // risk profile high degilse account olusturuyor
+    // account olusturulduktan sonra reference id managerdan bir id aliyor
+    // account olusturulduktan sonra account repositoryden save ediyor
+    // account olusturulduktan sonra event publisherdan publish ediyor
+    // account olusturulduktan sonra account opening statusu opened olarak donduruyor
     public AccountOpeningStatus openAccount(String firstName, String lastName, String taxId, LocalDate dob)
             throws IOException {
 
@@ -33,8 +40,7 @@ public class AccountOpeningService {
                 taxId,
                 dob);
 
-        if (backgroundCheckResults == null ||
-                backgroundCheckResults.getRiskProfile().equals(UNACCEPTABLE_RISK_PROFILE)) {
+        if (backgroundCheckResults == null || backgroundCheckResults.getRiskProfile().equals(UNACCEPTABLE_RISK_PROFILE)) {
             return AccountOpeningStatus.DECLINED;
         } else {
             final String id = referenceIdsManager.obtainId(firstName, "", lastName, taxId, dob);
