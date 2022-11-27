@@ -69,7 +69,7 @@ class AccountOpeningServiceTest {
                 backgroundCheckResultsArgumentCaptor.getValue().getRiskProfile());
         assertEquals(okBackgroundCheckResults.getUpperAccountLimit(),
                 backgroundCheckResultsArgumentCaptor.getValue().getUpperAccountLimit());
-        verifyNoMoreInteractions(ignoreStubs(backgroundCheckService, referenceIdsManager));
+        verifyNoMoreInteractions(ignoreStubs(backgroundCheckService, referenceIdsManager));//verifyNoMoreInteractions
         verifyNoMoreInteractions(accountRepository, eventPublisher);
     }
 
