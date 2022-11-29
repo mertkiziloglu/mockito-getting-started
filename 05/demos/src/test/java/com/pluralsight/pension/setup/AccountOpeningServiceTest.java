@@ -142,6 +142,6 @@ class AccountOpeningServiceTest {
         when(accountRepository.save(accountId, FIRST_NAME, LAST_NAME, TAX_ID, DOB, backgroundCheckResults))
                 .thenReturn(true);
         doThrow(new RuntimeException()).when(eventPublisher).notify(accountId);
-        assertThrows(RuntimeException.class, () -> underTest.openAccount(FIRST_NAME, LAST_NAME, TAX_ID, DOB));
+        assertThrows(RuntimeException.class, () -> underTest.openAccount(FIRST_NAME, LAST_NAME, TAX_ID, DOB)); //this is the line that fails
     }
 }
