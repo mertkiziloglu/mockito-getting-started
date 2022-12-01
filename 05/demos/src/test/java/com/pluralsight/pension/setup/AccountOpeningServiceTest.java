@@ -111,7 +111,7 @@ class AccountOpeningServiceTest {
                         "something_not_unacceptable",
                         100));
         when(referenceIdsManager.obtainId(eq(FIRST_NAME), anyString(), eq(LAST_NAME), eq(TAX_ID), eq(DOB)))
-                .thenThrow(new RuntimeException());
+                .thenThrow(new RuntimeException()); //throw new RuntimeException();
         assertThrows(RuntimeException.class, () -> underTest.openAccount(FIRST_NAME, LAST_NAME, TAX_ID, DOB));
     }
 
