@@ -40,6 +40,8 @@ class AccountOpeningServiceTest {
                 100);
         when(backgroundCheckService.confirm(FIRST_NAME, LAST_NAME, TAX_ID, DOB))
                 .thenReturn(okBackgroundCheckResults);
+        //confirm servisine gittigimizde ise BackgroundCheckResults tipinde bir nesne donduruyoruz.
+
         when(referenceIdsManager.obtainId(
                 eq(FIRST_NAME),
                 anyString(),
@@ -53,8 +55,7 @@ class AccountOpeningServiceTest {
                 TAX_ID,
                 DOB);
         assertEquals(AccountOpeningStatus.OPENED, accountOpeningStatus);
-        ArgumentCaptor<BackgroundCheckResults> backgroundCheckResultsArgumentCaptor =
-                ArgumentCaptor.forClass(BackgroundCheckResults.class);
+        ArgumentCaptor<BackgroundCheckResults> backgroundCheckResultsArgumentCaptor = ArgumentCaptor.forClass(BackgroundCheckResults.class);//Todo: argumentCaptor
         verify(accountRepository).save(
                 eq(ACCOUNT_ID),
                 eq(FIRST_NAME),
