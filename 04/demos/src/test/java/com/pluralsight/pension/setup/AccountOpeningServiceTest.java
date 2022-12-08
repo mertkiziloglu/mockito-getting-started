@@ -83,6 +83,17 @@ class AccountOpeningServiceTest {
                 DOB);
         assertEquals(AccountOpeningStatus.DECLINED, accountOpeningStatus);
     }
+    @Test
+    public void shouldAcceptAccountIfUnacceptableRiskProfileBackgroundCheckResponseReceived() throws IOException {
+       when(backgroundCheckService.confirm(FIRST_NAME, LAST_NAME, TAX_ID, DOB))
+                .thenReturn(new BackgroundCheckResults("something_not_unacceptable", 0));
+        final AccountOpeningStatus accountOpeningStatus = underTest.openAccount(
+                FIRST_NAME,
+                LAST_NAME,
+                TAX_ID,
+                DOB);
+        assertEquals(AccountOpeningStatus.OPENED, accountOpeningStatus);
+    }
 
     @Test
     public void shouldDeclineAccountIfNullBackgroundCheckResponseReceived() throws IOException {
