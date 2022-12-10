@@ -110,7 +110,7 @@ class AccountOpeningServiceTest {
     @Test
     public void shouldThrowIfBackgroundChecksServiceThrows() throws IOException {
         when(backgroundCheckService.confirm(FIRST_NAME, LAST_NAME, TAX_ID, DOB))
-                .thenThrow(new IOException());
+                .thenThrow(new IOException()); // then return ile then throw arasinda fark var dikkat et
         assertThrows(IOException.class, () -> underTest.openAccount(FIRST_NAME, LAST_NAME, TAX_ID, DOB));
     }
 
