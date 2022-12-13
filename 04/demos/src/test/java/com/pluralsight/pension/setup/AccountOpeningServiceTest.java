@@ -126,7 +126,7 @@ class AccountOpeningServiceTest {
     }
 
     @Test
-    public void shouldThrowIfAccountRepositoryThrows() throws IOException {
+    public void shouldThrowIfAccountRepositoryThrows() throws IOException {//aynı anda 3 when ıslemı yapma sırası onemlı
         final BackgroundCheckResults backgroundCheckResults = new BackgroundCheckResults(
                 "something_not_unacceptable",
                 100);
