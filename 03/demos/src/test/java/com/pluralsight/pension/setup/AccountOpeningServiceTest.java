@@ -79,7 +79,7 @@ class AccountOpeningServiceTest {
     }
 
     @Test
-    public void shouldThrowIfAccountRepositoryThrows() throws IOException {
+    public void shouldThrowIfAccountRepositoryThrows() throws IOException {// save edilebilmesi icin obtainId ve backgroundCheckService.confirm() metotlari cagrilmali
         final BackgroundCheckResults backgroundCheckResults = new BackgroundCheckResults("something_not_unacceptable", 100);
         when(backgroundCheckService.confirm(FIRST_NAME, LAST_NAME, TAX_ID, DOB))
                 .thenReturn(backgroundCheckResults);
