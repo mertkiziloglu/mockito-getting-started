@@ -14,6 +14,8 @@ import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.*;
 
+/*herhangı bır metot test edilirken o method icinde ne kadar yere giiyorsa hepsini when ile mocklamak gerekir
+sonrasinda mocklanan methodlarin ne zaman cagirilacagini verify ile test ederiz*/
 class AccountOpeningServiceTest {
 
     private static final String FIRST_NAME = "John";
